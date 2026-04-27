@@ -1,5 +1,5 @@
 {
-  "name": "@altrudev/dweav-connect",
+  "name": "@altrudevelop/dweav-connect",
   "version": "1.0.1",
   "description": "Framework adapters for Dweav Trace — connect React, Vue, Svelte, Redux, Zustand, and Pinia to the Dweav Trace Chrome extension with zero configuration.",
   "author": "Altru.dev",
