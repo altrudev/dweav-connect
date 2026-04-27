@@ -5,9 +5,7 @@
   "author": "Altru.dev",
   "license": "MIT",
   "homepage": "https://altru.dev",
-"publishConfig": {
-  "registry": "https://npm.pkg.github.com"
-},
+
   "repository": {
     "type": "git",
     "url": "https://github.com/altrudevelop/dweav-connect"
