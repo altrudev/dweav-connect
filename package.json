@@ -1,0 +1,61 @@
+{
+  "name": "@altrudev/dweav-connect",
+  "version": "1.0.0",
+  "description": "Framework adapters for Dweav Trace — connect React, Vue, Svelte, Redux, Zustand, and Pinia to the Dweav Trace Chrome extension with zero configuration.",
+  "author": "Altru.dev",
+  "license": "MIT",
+  "homepage": "https://altru.dev",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/altrudevelop/dweav-connect"
+  },
+  "keywords": [
+    "dweav",
+    "dweav-trace",
+    "debugging",
+    "state-tracing",
+    "devtools",
+    "react",
+    "vue",
+    "svelte",
+    "redux",
+    "zustand",
+    "pinia"
+  ],
+  "main": "./src/index.js",
+  "exports": {
+    ".":           "./src/index.js",
+    "./react":     "./src/react.js",
+    "./vue":       "./src/vue.js",
+    "./svelte":    "./src/svelte.js",
+    "./redux":     "./src/redux.js",
+    "./zustand":   "./src/zustand.js",
+    "./pinia":     "./src/pinia.js"
+  },
+  "sideEffects": false,
+  "peerDependencies": {
+    "react":   ">=16.8.0",
+    "vue":     ">=3.0.0",
+    "svelte":  ">=3.0.0",
+    "redux":   ">=4.0.0",
+    "zustand": ">=4.0.0",
+    "pinia":   ">=2.0.0"
+  },
+  "peerDependenciesMeta": {
+    "react":   { "optional": true },
+    "vue":     { "optional": true },
+    "svelte":  { "optional": true },
+    "redux":   { "optional": true },
+    "zustand": { "optional": true },
+    "pinia":   { "optional": true }
+  },
+  "devDependencies": {
+    "react":   "^18.0.0",
+    "vue":     "^3.0.0"
+  },
+  "files": [
+    "src/",
+    "README.md",
+    "LICENSE"
+  ]
+}
