@@ -10,7 +10,7 @@
  *   import { useDweavTrace } from '@altrudevelop/dweav-connect/react';
  *
  *   function UserProfile() {
- *     const [user, setUser] = useState({ name: 'Sean', role: 'guest' });
+ *     const [user, setUser] = useState({ name: 'Example User', role: 'guest' });
  *     useDweavTrace(user, 'User Profile');
  *     // Every time `user` changes, a card appears in Dweav Trace automatically.
  *     ...
@@ -45,8 +45,8 @@ export function useDweavTrace(state, label = 'React State') {
  * Returns [state, setState] exactly like useState().
  *
  * Usage:
- *   const [user, setUser] = useDweavRef({ name: 'Sean' }, 'User');
- *   setUser({ name: 'Sean', role: 'admin' }); // → card fires automatically
+ *   const [user, setUser] = useDweavRef({ name: 'Example User' }, 'User');
+ *   setUser({ name: 'Example User', role: 'admin' }); // → card fires automatically
  */
 export function useDweavRef(initialState, label = 'React State') {
   const { useState } = require('react');
