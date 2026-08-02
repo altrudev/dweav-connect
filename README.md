@@ -1,8 +1,8 @@
 # @altrudevelop/dweav-connect
 
-Framework adapters for [Dweav Trace](https://altru.dev) — the privacy-first, offline-first state tracing Chrome extension.
+Framework adapters for [Dweav Trace](https://altru.dev/extensions/dweav-trace) — the privacy-first, offline-first state tracing Chrome extension.
 
-Connect React, Vue, Svelte, Redux, Zustand, and Pinia to Dweav Trace with a single line of code. Zero configuration. Zero cost in production if the extension is not installed.
+Connect React, Vue, Svelte, Redux, Zustand, and Pinia application state to Dweav Trace through framework-specific adapters. Trace delivery stays local, and calls safely no-op when the extension is unavailable.
 
 ---
 
@@ -12,21 +12,11 @@ Connect React, Vue, Svelte, Redux, Zustand, and Pinia to Dweav Trace with a sing
 npm install @altrudevelop/dweav-connect
 ```
 
-Commit the change.
-
 ---
 
-**Complete project status:**
+## Package status
 
-| Component | Status |
-|---|---|
-| Dweav Trace Chrome Extension | ✅ Built & tested |
-| Bug fixes (7 bugs) | ✅ Complete |
-| Phase 1 — Quality of life features | ✅ Complete |
-| Phase 2 — Power features | ✅ Complete |
-| `@altrudevelop/dweav-connect` NPM package | ✅ Published |
-
-Quite a journey to get that package published! What would you like to work on next?
+This is a public, early-stage companion package for Dweav Trace. Use framework-specific subpath imports, review the release notes, and validate the adapter in your application before production adoption. The currently published package provides adapters for React, Vue, Svelte, Redux, Zustand, and Pinia; it does not include an Angular adapter.
 
 ---
 
@@ -42,7 +32,7 @@ Dweav Trace exposes a `window.dweav()` global on every page where it is installe
 import { useDweavTrace } from '@altrudevelop/dweav-connect/react';
 
 function UserProfile() {
-  const [user, setUser] = useState({ name: 'Sean', role: 'guest' });
+  const [user, setUser] = useState({ name: 'Example User', role: 'guest' });
 
   // One line — traces every time `user` changes.
   useDweavTrace(user, 'User Profile');
@@ -168,7 +158,7 @@ import { create } from 'zustand';
 const useUserStore = create(
   dweav(
     (set) => ({
-      name: 'Sean',
+      name: 'Example User',
       role: 'guest',
       setRole: (role) => set({ role }),
     }),
@@ -248,7 +238,7 @@ Every adapter checks for the presence of `window.dweav` before doing anything. I
 - `dweav` (Zustand) — `set()` works normally, trace is skipped
 - `DweavPiniaPlugin` — `$subscribe` runs normally, trace is skipped
 
-Zero performance cost in production beyond a single `typeof window.dweav === 'function'` check per trace call.
+When Dweav Trace is unavailable, trace delivery no-ops after a local availability check. Framework adapters may still create their normal watcher, hook, middleware, or subscription, so applications should attach only the tracing they intend to use.
 
 ---
 
