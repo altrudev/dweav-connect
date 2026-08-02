@@ -14,7 +14,7 @@
  *   const useUserStore = create(
  *     dweav(
  *       (set) => ({
- *         name: 'Sean',
+ *         name: 'Example User',
  *         role: 'guest',
  *         setRole: (role) => set({ role }),
  *       }),
